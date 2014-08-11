@@ -41,4 +41,6 @@
 (show-paren-mode 1)
 (setq make-backup-files nil)
 
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
