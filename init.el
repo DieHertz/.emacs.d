@@ -4,11 +4,14 @@
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("marmalade" . "http://marmalade-repo.org/packages/")
 			 ("elpa" . "http://tromey.com/elpa/")
-			 ("melpa" . "http://melpa.milkbox.net/packages")
-			 ("org" . "http://orgmode.org/elpa")))
+			 ("melpa" . "http://melpa.milkbox.net/packages/")
+			 ("org" . "http://orgmode.org/elpa/")))
 
 ;; ensure every single package installed via Package.el is loaded in ready to be customized
 (package-initialize)
+
+(add-to-list 'load-path user-emacs-directory)
+(require 'dependencies)
 
 (defconst custom-file-path (expand-file-name "custom.el" user-emacs-directory))
 (unless (file-exists-p custom-file-path) (write-region "" nil custom-file-path))
