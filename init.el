@@ -32,10 +32,11 @@
 
 (require 'ido)
 (ido-mode)
-(setq ido-enable-flex-match)
+(setq ido-enable-flex-matching t)
 
-(menu-bar-mode -1)
-(tool-bar-mode -1)
+(setq inhibit-startup-screen t)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
 (global-linum-mode)
 (column-number-mode)
 (show-paren-mode 1)
