@@ -1,6 +1,8 @@
 (require 'cl)
 
-(defconst required-packages '(monokai-theme move-text fiplr))
+(defconst required-packages
+  '(monokai-theme move-text fiplr indent-guide
+		  multiple-cursors))
 
 (defun required-packages-installed-p ()
   (loop for p in required-packages

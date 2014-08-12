@@ -30,6 +30,18 @@
 (require 'move-text)
 (move-text-default-bindings)
 
+(require 'indent-guide)
+(indent-guide-global-mode)
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-l") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(require 'fiplr)
+(global-set-key (kbd "C-x f") 'fiplr-find-file)
+
 (require 'ido)
 (ido-mode)
 (setq ido-enable-flex-matching t)
@@ -41,7 +53,5 @@
 (column-number-mode)
 (show-paren-mode 1)
 (setq make-backup-files nil)
-
-(global-set-key (kbd "C-x f") 'fiplr-find-file)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
