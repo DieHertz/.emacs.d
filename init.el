@@ -35,9 +35,8 @@
 
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-l") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
 (when mc/keymap
   (define-key mc/keymap (kbd "<return>") 'newline))
 
@@ -46,6 +45,10 @@
 
 (require 'expand-region)
 ;; there be smart function to alternate between expand-region and mc/mark-next-like-this
+(defun expand-or-mark-next-like-this () (interactive) (if (use-region-p)
+	      (mc/mark-next-like-this 1)
+	    (er/expand-region 1)))
+(global-set-key (kbd "C->") 'expand-or-mark-next-like-this)
 
 (require 'ido)
 (ido-mode)
