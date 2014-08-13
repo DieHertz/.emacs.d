@@ -44,6 +44,9 @@
 (require 'fiplr)
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
 
+(require 'expand-region)
+;; there be smart function to alternate between expand-region and mc/mark-next-like-this
+
 (require 'ido)
 (ido-mode)
 (setq ido-enable-flex-matching t)
