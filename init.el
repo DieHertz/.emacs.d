@@ -38,6 +38,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(when mc/keymap
+  (define-key mc/keymap (kbd "<return>") 'newline))
 
 (require 'fiplr)
 (global-set-key (kbd "C-x f") 'fiplr-find-file)
