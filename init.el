@@ -24,7 +24,7 @@
 (load-theme 'monokai)
 
 (set-default-font "Source Code Pro")
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 90)
 
 ;; handy plugin for moving entire lines up/down (like C-S-ArrowUp/ArrowDown in Sublime Text)
 (require 'move-text)
