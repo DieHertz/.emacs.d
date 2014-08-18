@@ -3,6 +3,10 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	c-indent-line-or-region
+	indent-for-tab-command
+	nxml-electric-slash
+	tab-to-tab-stop
 	))
 
 (setq mc/cmds-to-run-once

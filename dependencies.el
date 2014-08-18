@@ -2,7 +2,8 @@
 
 (defconst required-packages
   '(monokai-theme move-text fiplr indent-guide
-		  multiple-cursors expand-region))
+		  multiple-cursors expand-region
+		  auto-complete))
 
 (defun required-packages-installed-p ()
   (loop for p in required-packages

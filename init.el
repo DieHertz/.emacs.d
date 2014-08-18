@@ -1,3 +1,4 @@
+
 (require 'package)
 
 (setq package-archives '(
@@ -50,16 +51,31 @@
 	    (er/expand-region 1)))
 (global-set-key (kbd "C->") 'expand-or-mark-next-like-this)
 
+;; incremental search auto wrap
+(defadvice isearch-repeat (after isearch-no-fail activate)
+  (unless isearch-success
+    (ad-disable-advice 'isearch-repeat 'after 'isearch-no-fail)
+    (ad-activate 'isearch-repeat)
+    (isearch-repeat (if isearch-forward 'forward))
+    (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
+    (ad-activate 'isearch-repeat)))
+
+(require 'auto-complete)
+(auto-complete-mode)
+
 (require 'ido)
 (ido-mode)
+(ido-everywhere)
 (setq ido-enable-flex-matching t)
 
+(setq tab-stop-list (number-sequence 4 120 4))
 (setq inhibit-startup-screen t)
-(menu-bar-mode 0)
-(tool-bar-mode 0)
+(menu-bar-mode nil)
+(tool-bar-mode nil)
+(scroll-bar-mode nil)
 (global-linum-mode)
 (column-number-mode)
-(show-paren-mode 1)
+(show-paren-mode)
 (setq make-backup-files nil)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
