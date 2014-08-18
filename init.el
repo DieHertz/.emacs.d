@@ -30,9 +30,6 @@
 (require 'move-text)
 (move-text-default-bindings)
 
-(require 'indent-guide)
-(indent-guide-global-mode)
-
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-l") 'mc/edit-lines)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
