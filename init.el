@@ -1,4 +1,3 @@
-
 (require 'package)
 
 (setq package-archives '(
@@ -70,12 +69,12 @@
 
 (setq tab-stop-list (number-sequence 4 120 4))
 (setq inhibit-startup-screen t)
-(menu-bar-mode nil)
-(tool-bar-mode nil)
-(scroll-bar-mode nil)
-(global-linum-mode)
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
 (column-number-mode)
 (show-paren-mode)
 (setq make-backup-files nil)
+(setq use-dialog-box nil)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
