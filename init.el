@@ -61,18 +61,14 @@
 (global-auto-complete-mode)
 (add-to-list 'ac-modes 'prog-mode)
 
-(require 'readline-complete)
-(setq explicit-shell-file-name "bash")
-(setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-(setq comint-process-echoes t)
-(add-to-list 'ac-modes 'shell-mode)
-(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
-
 (require 'ido)
 (ido-mode)
 (ido-everywhere)
 (setq ido-enable-flex-matching t)
 
+(setq-default c-basic-offset 4
+    tab-width 4
+    indent-tabs-mode nil)
 (setq tab-stop-list (number-sequence 4 120 4))
 (setq inhibit-startup-screen t)
 (menu-bar-mode 0)

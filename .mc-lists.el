@@ -3,14 +3,15 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-	c-indent-line-or-region
-	indent-for-tab-command
-	nxml-electric-slash
-	tab-to-tab-stop
-	))
+        c-indent-line-or-region
+        comint-delchar-or-maybe-eof
+        indent-for-tab-command
+        nxml-electric-slash
+        tab-to-tab-stop
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-	eval-print-last-sexp
-	expand-or-mark-next-like-this
-	))
+        eval-print-last-sexp
+        expand-or-mark-next-like-this
+        ))
