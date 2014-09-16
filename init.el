@@ -38,7 +38,7 @@
   (define-key mc/keymap (kbd "<return>") 'newline))
 
 (require 'fiplr)
-(global-set-key (kbd "C-x f") 'fiplr-find-file)
+(global-set-key (kbd "C-c f") 'fiplr-find-file)
 (setq *grizzl-read-max-results* 20)
 
 (require 'expand-region)
